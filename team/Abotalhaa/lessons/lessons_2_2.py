@@ -20,7 +20,7 @@ def Palindrome():
     while temp > 0:
         reversed_num = reversed_num * 10 + temp % 10
         temp //= 10
-    if temp == reversed_num:
+    if x == reversed_num:
         print([x], 'This a palindrome!')
     else:
         print([x], 'This not a palindrome!')
