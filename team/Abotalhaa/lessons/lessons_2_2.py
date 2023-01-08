@@ -1,29 +1,76 @@
-# def Palindrome():
-#     x = int(input('Enter numbers:\n'))
-#     reversed_num = 0
-#     temp = x
-#     while temp > reversed_num:
-#         reversed_num = reversed_num * 10 + temp % 10
-#         temp //= 10
-#     if temp == reversed_num or temp == reversed_num // 10:
-#         print([x], 'This a palindrome!')
-#     else:
-#         print([x], 'This not a palindrome!')
-#
-#
-# Palindrome()
-# --------------------------------------------------
-def Palindrome():
-    x = int(input('Enter numbers:\n'))
-    reversed_num = 0
-    temp = x
-    while temp > 0:
-        reversed_num = reversed_num * 10 + temp % 10
-        temp //= 10
-    if x == reversed_num:
-        print([x], 'This a palindrome!')
-    else:
-        print([x], 'This not a palindrome!')
+"""
+13. Roman to Integer
+https://leetcode.com/problems/roman-to-integer/
+https://youtu.be/GklNd06Za0w
+https://github.com/KhaledLela/LearnPython/blob/main/leetcode/roman_to_integer.py
+"""
+from unittest import TestCase
+
+"""
+Roman numerals are usually written largest to smallest from left to right. 
+However, the numeral for four is not IIII. 
+Instead, the number four is written as IV. 
+Because the one is before the five we subtract it making four.
+The same principle applies to the number nine, which is written as IX.
+There are six instances where subtraction is used:
+I can be placed before V (5) and X (10) to make 4 and 9. 
+X can be placed before L (50) and C (100) to make 40 and 90. 
+C can be placed before D (500) and M (1000) to make 400 and 900.
+"""
 
 
-Palindrome()
+# def romanToInt(s: str) -> int:
+#     cd = {
+#         'I': 1,
+#         'V': 5,
+#         'X': 10,
+#         'L': 50,
+#         'C': 100,
+#         'D': 500,
+#         'M': 1000,
+#         'IV': 4,
+#         'IX': 9,
+#         'XL': 40,
+#         'XC': 90,
+#         'CD': 400,
+#         'CM': 900,
+#     }
+#     ac = 0
+#     i = 0
+#     while i < len(s):
+#         if i + 1 < len(s) and s[i:i + 2] in cd:
+#             ac += cd[s[i:i + 2]]
+#             i += 2
+#         else:
+#             ac += cd[s[i]]
+#             i += 1
+#     return ac
+#
+#
+# Ran 1 test in 0.006s
+def romanToInt(s: str) -> int:
+    cd = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+    ac = 0
+    count = len(s)
+    for i in range(count):
+        cv = cd[s[i]]
+        if i + 1 < count and cv < cd[s[i + 1]]:
+            ac -= cv
+        else:
+            ac += cv
+    return ac
+
+
+class TestSol(TestCase):
+    def test_romanToInt(self):
+        actual = romanToInt("I")
+        expected = 1
+        self.assertEqual(actual, expected)
