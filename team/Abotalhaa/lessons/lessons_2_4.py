@@ -1,18 +1,11 @@
-def isValid(test_str):
-    if len(test_str) % 2 != 0:
+class Solution:
+    def containsDuplicate(self, nums):
+        seen = set()
+        for num in nums:
+            if num in seen:
+                return True
+            seen.add(num)
         return False
-    par_dict = {'(': ')', '{': '}', '[': ']'}
-    stack = []
-    for char in test_str:
-        if char in par_dict.keys():
-            stack.append(char)
-        else:
-            if stack == []:
-                return False
-            open_brac = stack.pop()
-            if char != par_dict[open_brac]:
-                return False
-    return stack == []
 
-
-print(isValid('[]'))
+ob1 = Solution()
+print(ob1.containsDuplicate([1, 3, 4, 6, 5, 10]))
