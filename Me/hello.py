@@ -8,12 +8,11 @@
 #           end='')
 #     sleep(.4)
 # --------------------------------------
-# import pyttsx3
-#
-# engine = pyttsx3.init()
-# engine.setProperty('rate', 150)
-# engine.setProperty('volume', 0.9)
-# engine.say(
-#     'son of bitch son of')
-# engine.runAndWait()
+import pyttsx3
+
+engine = pyttsx3.init()
+engine.setProperty('rate', 150)
+engine.setProperty('volume', 0.9)
+engine.say('class constructor')
+engine.runAndWait()
 # -----------------------------------------
