@@ -1,21 +1,22 @@
-import speech_recognition
 from gtts import gTTS
 from playsound import playsound
-
-r = speech_recognition.Recognizer()
-with speech_recognition.Microphone() as src:
+import speech_recognition as sr
+r = sr.Recognizer()
+with sr.Microphone() as src:
     print('Say something....')
     audio = r.listen(src)
 try:
-    t = r.recognize_google(audio, language='ar-AR')
+    t = r.recognize_google(audio, language='eng-ENG')
     print(t)
-    f = open('text.txt', 'a', encoding='utf-8')
+    f = open('NOM.txt', 'a', encoding='utf-8')
     f.writelines(t + '\n')
     f.close()
     obj = gTTS(text=t, lang='ar', slow=False)
-    obj.save('text.mp3')
-    playsound('text.mp3')
-except speech_recognition.UnknownValueError as U:
+    obj.save('nom.mp3')
+    playsound('nom.mp3')
+except sr.UnknownValueError as U:
     print(U)
-except speech_recognition.RequestError as R:
+except sr.RequestError as R:
     print(R)
+except:
+    print('Error')

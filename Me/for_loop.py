@@ -21,4 +21,78 @@
 # for item in range(len(sharks)):
 #     sharks.append('shark')
 #
-# print(sharks)  # ['hammerhead', 'great white', 'dogfish', 'frilled', 'bullhead', 'requiem', 'shark', 'shark', 'shark', 'shark', 'shark', 'shark']
+# print(sharks)  ['hammerhead', 'great white', 'dogfish', 'frilled', 'bullhead', 'requiem',
+#                     'shark', 'shark', 'shark', 'shark', 'shark', 'shark']
+# -----------------------------------------------------------------------------------------------------
+# nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+# for i in nums:
+#     if i % 2 != 0:
+#         print([i], end=' ')
+#         print('this number fardy')
+#         continue
+#     if i % 2 == 0:
+#         print([i], end=' ')
+#         print('this number zawgy')
+# -------------------------------------------------
+# for i in range(11):
+#     if i % 2:
+#         continue
+#     print(i)
+# # --------------------------------------------------
+# print('----------------------------------------------------')
+# i = -1
+# while i <= 10:
+#     i += 1
+#     if i % 2:
+#         continue
+#     print(i)
+# ------------------------------------------------------------------
+# for i in range(5):
+#     print(i)
+# if i == 4:
+#     break
+# else:
+#     print('Done ;')
+# i = -1
+# while i != 5:
+#     i += 1
+#     if i == 4:
+#         continue
+#     print(i)
+# else:
+#     print('Done ;')
+# -------------------------------------------------------------------------
+# while True:
+#     try:
+#         x = int(input('Enter A Number : '))
+#         if x % 2 == 0:
+#             print('Even')
+#         else:
+#             print('Odd')
+#     except ValueError as e:
+#         print(e)
+# -----------------------------------------------------------------
+# while True:
+#     try:
+#         num1 = int(input('Enter A Num1 : '))
+#         num2 = int(input('Enter A Num2 : '))
+#         result = num1 / num2
+#         print(result)
+#     except ZeroDivisionError:
+#         print('Cant divide on zero')
+#     except ValueError:
+#         print('Incorrect Number')
+# -------------------------------------------------------------
+# marks = {'ahmed': 20, 'ali': 19, 'mahmoud': 10, 'noor': 18}
+# name = input('Enter your name:\n')
+# try:
+#     mark = marks[name]
+# except:
+#     mark = 'user not found'
+# finally:
+#     print(mark)
+# ----------------------------------------------------------------------
+import module_name  # this and 2 under need install
+from module_name import object # (1)
+from module_name import *  # (2)
+# -----------------------------------------------------------------
