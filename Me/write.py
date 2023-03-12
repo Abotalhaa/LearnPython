@@ -8,12 +8,12 @@
 #           end='')
 #     sleep(.4)
 # --------------------------------------
-import pyttsx3
-engine = pyttsx3.init()
-engine.setProperty('rate', 150)
-engine.setProperty('volume', 0.9)
-engine.say('class constructor')
-engine.runAndWait()
+# import pyttsx3
+# engine = pyttsx3.init()
+# engine.setProperty('rate', 150)
+# engine.setProperty('volume', 0.9)
+# engine.say('class constructor')
+# engine.runAndWait()
 
 # from datetime import *
 #
@@ -337,3 +337,5 @@ engine.runAndWait()
 #             return s[0] == s[-1] and isPal(s[1:-1])
 #
 #     return isPal(toChars(s))
+# s = list()
+# print(type(s))
