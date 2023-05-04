@@ -1,7 +1,8 @@
 # from time import sleep
 #
 # words = '''
-# بسم الله الرحمن الرحيم الحمد لله رب العالمين الرحمن الرحيم مالك يوم الدين اياك نعبد واياك نستعين اهدنا الصراط المستقيم صراط الذين انعمت عليهم غير المغضوب عليهم ولا الضالين وفي الصلاة(آمين)
+# بسم الله الرحمن الرحيم الحمد لله رب العالمين الرحمن الرحيم مالك يوم الدين
+# اياك نعبد واياك نستعين اهدنا الصراط المستقيم صراط الذين انعمت عليهم غير المغضوب عليهم ولا الضالين وفي الصلاة(آمين)
 # '''
 # for char in words:
 #     print(char,
@@ -27,7 +28,7 @@
 #     def describe(self):
 #         print(f"my name is {self.name} and my age is {self.age}")
 #
-#     @classmethod
+#     @classmate
 #     def init_from_birth_year(cls, name, birth_year):
 #         return cls(name, date.today().year - birth_year)
 #
@@ -39,13 +40,13 @@
 #     def __init__(self, ingredients):
 #         self.ingredients = ingredients
 #
-#     @classmethod
+#     @classmate
 #     def veg(cls):
 #         return cls(['mushrooms', 'olives', 'onions'])
 #
-#     @classmethod
+#     @classmate
 #     def margherita(cls):
-#         return cls(['mozarella', 'sauce'])
+#         return cls(['mozzarella', 'sauce'])
 #
 #     def __str__(self):
 #         return f"Pizza ingredients are {self.ingredients}"
@@ -178,12 +179,12 @@
 # print(man.display())
 # print(Man.no_of_men)
 #
-#
+# #
 # from datetime import date
 #
 #
 # class Person:
-#     def __init__(self, name,age):
+#     def __init__(self, name, age):
 #         self.name = name
 #         self.age = age
 #
@@ -191,9 +192,12 @@
 #         return f"name is {self.name} and age is {self.age}"
 #
 #     @classmethod
-#     def init_form_birth_year(cls, name, birth_year, extra):
-#         return cls(name, date.today().year - birth_year, extra)
+#     def init_form_birth_year(cls, name, birth_year):
+#         return cls(name, date.today().year - birth_year)
 #
+#
+# ob1 = Person.init_form_birth_year('abdullah saad', 2005)
+# print(ob1.age)
 #
 # class Man(Person):
 #     gender = 'Male'
@@ -223,7 +227,7 @@
 #         return string + f" and hair is {self.hair} and gender is {self.gender}"
 #
 #
-# woman = Woman.init_form_birth_year("shahd", 2004, "harier")
+# woman = Woman.init_form_birth_year("shad", 2004, "harder")
 # print(woman.display())
 #
 # print(isinstance(woman, Person))
@@ -339,3 +343,5 @@
 #     return isPal(toChars(s))
 # s = list()
 # print(type(s))
+m = """بســـــــــــــــــــــــــــــــــــــــــــــم الـلــــــــــــــــــــــــــــــــــــــــــــــــه 
+الرحمــــــــــــــــــــــــــــــــــــن الرحيـــــــــــــــــــم """
