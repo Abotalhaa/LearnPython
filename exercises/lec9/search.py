@@ -8,6 +8,7 @@ Accept user input and search in json file loaded from same dir that convert the 
 # Keep searching til user enter "#"
 # print each result and at the end print all result summary.
 """
+import json
 
 
 def save_results(results):
@@ -23,7 +24,7 @@ def save_results(results):
 # def load_summary():
 #     file = None
 #     try:
-#         file = open('summary.json', 'r')
+#         file = open('sum.json', 'r')
 #         summary = file.read()
 #         return summary
 #     except Exception as ex:
@@ -35,7 +36,7 @@ def save_results(results):
 def load_summary():
     try:
         with open("summary.json", "r") as file:
-            return file.read()
+            return json.load(file)
     except Exception as ex:
         print(f"Something went wrong: {ex}")
 
@@ -48,17 +49,18 @@ results = {}
 # Search for the keyword in the JSON file
 def search_keyword(keyword):
     count = 0
-    for word in summary:
-        if keyword == word:
-            count += 1
-    print(f"{keyword : {count}}")
+    for value in summary.values():
+        for lines in value:
+            if keyword == lines:
+                count += 1
+    print(f"{keyword} : {count}")
     results[keyword] = count
 
 
 # Ask the user to input the search keyword
 while True:
     keyword = input("Enter search keyword:\n")
-    if keyword is "#":
+    if keyword == "done":
         break
     search_keyword(keyword)
 
